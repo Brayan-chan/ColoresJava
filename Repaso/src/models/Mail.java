@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Mail;
+package models;
 
 import java.util.ArrayList;
 
@@ -10,28 +6,32 @@ import java.util.ArrayList;
  *
  * @author chanp
  */
-public class claseMail {
-     public static ArrayList<Mail> mails = new ArrayList<>();
+
+public class Mail {
+    public static ArrayList<Mail> mails = new ArrayList<>();
     
     private int id;
     private String emailUser;
+    private String fecha;
     private String emailSend;
     private String asunto;
     private String cuerpo;
-    private String fecha;
     private String status;
+    
 
-    public claseMail() {
+    public Mail() {
     }
 
-    public claseMail(int id, String emailUser, String emailSend, String asunto, String cuerpo, String fecha, String status) {
+    public Mail(int id, String emailUser,  String fecha, String emailSend, String asunto, String cuerpo, String status) {
         this.id = id;
         this.emailUser = emailUser;
+        this.fecha = fecha;
         this.emailSend = emailSend;
         this.asunto = asunto;
         this.cuerpo = cuerpo;
-        this.fecha = fecha;
         this.status = status;
+        
+        
     }
 
     public static ArrayList<Mail> getMails() {
@@ -39,7 +39,7 @@ public class claseMail {
     }
 
     public static void setMails(ArrayList<Mail> mails) {
-        claseMail.mails = mails;
+        Mail.mails = mails;
     }
 
     public int getId() {
@@ -56,6 +56,14 @@ public class claseMail {
 
     public void setEmailUser(String emailUser) {
         this.emailUser = emailUser;
+    }
+    
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
     public String getEmailSend() {
@@ -81,16 +89,8 @@ public class claseMail {
     public void setCuerpo(String cuerpo) {
         this.cuerpo = cuerpo;
     }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getStatus() {
+    
+      public String getStatus() {
         return status;
     }
 
@@ -100,10 +100,9 @@ public class claseMail {
 
     @Override
     public String toString() {
-        return "claseMail{" + "id=" + id + ", emailUser=" + emailUser + ", emailSend=" + emailSend + ", asunto=" + asunto + ", cuerpo=" + cuerpo + ", fecha=" + fecha + ", status=" + status + '}';
+        return "Mail{" + "id=" + id + ", emailUser=" + emailUser + ", fecha=" + fecha + ", emailSend=" + emailSend + ", asunto=" + asunto + ", cuerpo=" + cuerpo + ", status=" + status + '}';
     }
     
-    
-    
-    
+
+                       
 }
